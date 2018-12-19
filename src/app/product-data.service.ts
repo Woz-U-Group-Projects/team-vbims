@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { HttpClientModule, HttpHeaders } from '@angular/common/';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductDataService {
+  url: string = ""
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 }

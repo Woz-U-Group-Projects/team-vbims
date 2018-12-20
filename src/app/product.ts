@@ -6,6 +6,7 @@ export class Product {
     numberInStock:number;
     cost:number;
 
+    
 
 
 }

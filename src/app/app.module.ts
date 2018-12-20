@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
     SearchResultPageComponent,
     PasswordResetPageComponent,
     OutOfStockPageComponent,
+  
    
   ],
   imports: [

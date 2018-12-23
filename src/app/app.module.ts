@@ -7,6 +7,7 @@ import { SearchResultPageComponent } from './search-result-page/search-result-pa
 import { PasswordResetPageComponent } from './password-reset-page/password-reset-page.component';
 import { OutOfStockPageComponent } from './out-of-stock-page/out-of-stock-page.component';
 import { FormsModule } from '@angular/forms';
+import { HomePageDefaultModule } from './home-page-default/home-page-default.module';
 
 
 @NgModule({
@@ -22,7 +23,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    HomePageDefaultModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

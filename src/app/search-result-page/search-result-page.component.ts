@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductDataService } from '../product-data.service';
 
 @Component({
   selector: 'app-search-result-page',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchResultPageComponent implements OnInit {
 
-  constructor() { }
+  product:any;
+
+  constructor(private productDataService: ProductDataService) { }
 
   ngOnInit() {
+    this.productDataService.getProduct().subscribe((data)=>{this.product = data;
+    })
   }
 
 }

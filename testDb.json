@@ -1,0 +1,49 @@
+{ "product": [
+  
+    {
+        
+        "id": 1,
+        "name": "DItechTV 40 inch ",
+        "description": "BLAH BLAH",
+        "price": 500,
+        "numberInStock": 5,
+        "cost": 300
+        
+    },
+    {
+        
+        "id": 2,
+        "name": "SItechTV 40 inch ",
+        "description": "BLAH BLAH",
+        "price": 500,
+        "numberInStock": 5,
+        "cost": 300
+    },
+    {
+        
+        "id": 3,
+        "name": "FItechTV 40 inch ",
+        "description": "BLAH BLAH",
+        "price": 500,
+        "numberInStock": 5,
+        "cost": 300
+    },
+    {
+       
+    "id": 4,
+    "name": "GItechTV 40 inch ",
+    "description": "BLAH BLAH",
+    "price": 500,
+    "numberInStock": 5,
+    "cost": 300
+    },
+    {
+        
+        "id": 5,
+        "name": "AItechTV 40 inch ",
+        "description": "BLAH BLAH",
+        "price": 500,
+        "numberInStock": 5,
+        "cost": 300
+    }
+ ]}

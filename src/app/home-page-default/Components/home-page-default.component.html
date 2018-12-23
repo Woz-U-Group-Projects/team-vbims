@@ -1,3 +1,7 @@
+<div id="header" style="text-align:center">
+  <h1>VBIMS</h1>
+  <h3>Virtual Business Inventory Management System</h3>
+</div>
 <!-- Home Page Default - Completely Unstyled. Skeleton Completed. -->
 
 <!-- Sign in link, will be in top right of page. See ticket UI4 for more details. -->
@@ -5,11 +9,7 @@
   <a href="../../sign-in-page">Click here to sign in!</a>
 </div>
 
-<!-- VBIMS title at top of webpage, will be center of the page. See ticket UI4 for more details. -->
-<div id='header'>
-  <h1>VBIMS</h1>
-  <h3>Virtual Business Inventory Management System</h3>
-</div>
+
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -26,19 +26,11 @@
                       <label for="filter">Filter by</label>
                       <select class="form-control">
                         <option value="0" selected>All Products</option>
-                        <option value="1">Featured</option>
-                        <option value="2">Most popular</option>
-                        <option value="3">Top rated</option>
-                        <option value="4">Most commented</option>
+                        <option value="1">cost</option>
+                        <option value="2">??</option>
+                        <option value="3">??</option>
+                        <option value="4">??</option>
                       </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="contain">Author</label>
-                      <input class="form-control" type="text" />
-                    </div>
-                    <div class="form-group">
-                      <label for="contain">Contains the words</label>
-                      <input class="form-control" type="text" />
                     </div>
                     <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                   </form>
@@ -51,11 +43,23 @@
       </div>
     </div>
   </div>
-  </div>
+ 
 <!-- Search bar with enter button and Filter button. Enter button is on the right, Filter button is on the left. 
 The search bar will be ceneted underneath the header. See ticket UI4 for more details. -->
 <!-- <div id="search-bar">
   <button type="menu">Filter</button>
   <input type="text" placeholder="Search...">
   <button type="submit"><i class="fa fa-search"></i></button>
-</div> -->
+</div>
+
+ -->
+
+<ul>
+  <li *ngFor= "let product of products">
+    <label for="inventory"></label> 
+    {{product.id + 1}}.{{product.name}}: {{product.numberInStock}}
+
+    
+  </li>
+</ul>
+<!-- List of products shown on the view of the home page -->

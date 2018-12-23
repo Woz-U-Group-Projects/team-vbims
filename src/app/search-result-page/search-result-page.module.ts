@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ProductDataService } from '../product-data.service';
 
 @NgModule({
   declarations: [],
@@ -7,4 +8,5 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class SearchResultPageModule { }
+export class SearchResultPageModule { private productDataService: ProductDataService}
+

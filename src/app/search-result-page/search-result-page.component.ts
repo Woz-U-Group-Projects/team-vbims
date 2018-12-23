@@ -13,8 +13,7 @@ export class SearchResultPageComponent implements OnInit {
   constructor(private productDataService: ProductDataService) { }
 
   ngOnInit() {
-    this.productDataService.getProduct().subscribe((data)=>{this.product = data;
-    })
-  }
+    
+    }  }
 
-}
+

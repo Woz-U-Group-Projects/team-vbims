@@ -1,3 +1,52 @@
-<p>
-  product-list works!
-</p>
+<div>
+  <br>
+  <mat-card>
+
+    <button mat-raised-button color="primary" routerLink="/create">Add New Inventory</button>
+    <br><br>
+    <mat-divider></mat-divider>
+    <br>
+    <table mat-table [dataSource]="products">
+      <ng-container matColumnDef="_id">
+        <th mat-header-cell *matHeaderCellDef> _id </th>
+        <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="numberInStock">
+        <th mat-header-cell *matHeaderCellDef> Number in Stock </th>
+        <td mat-cell *matCellDef="let element"> {{element.numberInStock}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="cost">
+        <th mat-header-cell *matHeaderCellDef> Cost </th>
+        <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="supplier">
+        <th mat-header-cell *matHeaderCellDef> Supplier </th>
+        <td mat-cell *matCellDef="let element"> {{element.supplier}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef class="mat-column-right"> Actions </th>
+          <td mat-cell *matCellDef="let element" class="mat-column-right">
+            <button mat-button color="primary" (click)="editIssue(element._id)">Edit</button>
+            <button mat-button color="warn" (click)="deleteIssue(element._id)">Delete</button>
+          </td>
+        </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-card>
+</div>

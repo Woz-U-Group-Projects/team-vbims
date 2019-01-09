@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MatToolbarModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,6 +8,19 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { ProductService } from './product.service';
 import { HttpClientModule } from '@angular/common/http';
+
+// Imports for Material Desing
+import { MatToolbarModule,
+         MatFormFieldModule,
+         MatInputModule,
+         MatOptionModule,
+         MatSelectModule,
+         MatIconModule,
+         MatButtonModule,
+         MatCardModule,
+         MatTableModule,
+         MatDividerModule,
+         MatSnackBarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -22,6 +34,16 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatTableModule,
+    MatDividerModule,
+    MatSnackBarModule,
     HttpClientModule
   ],
   providers: [ProductService],

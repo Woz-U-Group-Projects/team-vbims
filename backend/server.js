@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import product from './models/product';
+import Product from './models/product';
 
 import { runInNewContext } from 'vm';
 
@@ -30,7 +30,7 @@ connection.once('open', () => {
 // endpoints configuration 
 
 router.route('/products').get((req, res) =>{
-    product.find((err, products) => {
+    Product.find((err, products) => {
         if (err)
            console.log(err);
         else

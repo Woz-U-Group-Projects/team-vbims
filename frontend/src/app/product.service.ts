@@ -23,7 +23,7 @@ export class ProductService {
   }
 
   getProductById(id) {
-    return this.http.get(`${this.productsUrl}/products/${id}`);
+    return this.http.get(`${this.productsUrl}/${id}`);
   }
 
   addProduct(name, description, numberInStock, cost, supplier){
@@ -35,7 +35,7 @@ export class ProductService {
       supplier: supplier,
      
     };
-    return this.http.post(`${this.productsUrl}/products/add`, product);
+    return this.http.post(`${this.productsUrl}/add`, product);
   }
   updateProduct(id, name, description, numberInStock, cost, supplier, status) {
     const product = {

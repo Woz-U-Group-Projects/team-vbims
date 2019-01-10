@@ -1,3 +1,32 @@
-<p>
-  add-product works!
-</p>
+<div>
+  <br>
+  <mat-card>
+    <section class="mat-typography">
+      <h3>Add a New Product to Inventory</h3>
+    </section>
+    <mat-divider></mat-divider>
+    <br>
+    <form [formGroup]="createForm" class="create-form">
+      <mat-form-field class="field-full-width">
+        <input matInput placeholder="Name" formControlName="name" #name>
+
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <input matInput placeholder="Description" formControlName="description" #description>
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <textarea matInput placeholder="Number In Stock" formControlName="numberInStock" #numberInStock></textarea>
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <textarea matInput placeholder="Cost" formControlName="cost" #cost></textarea>
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <textarea matInput placeholder="Supplier" formControlName="supplier" #supplier></textarea>
+      </mat-form-field>
+      <mat-divider></mat-divider>
+      <br><br>
+      <button mat-raised-button color="accent" routerLink="/productslist">Back</button>&nbsp;
+      <button type="submit" (click)="addProduct(name.value, description.value, numberInStock.value, cost.value, supplier.value)" [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary">Save</button>
+    </form>
+  </mat-card>
+</div>

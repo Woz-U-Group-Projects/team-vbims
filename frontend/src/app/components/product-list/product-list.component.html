@@ -1,7 +1,7 @@
 <div>
   <br>
   <mat-card>
-    <button mat-raised-button color="primary" routerLink="/create">Add New Inventory</button>
+    <button mat-raised-button color="primary" routerLink="/add">Add New Inventory</button>
     <br><br>
     <mat-divider></mat-divider>
     <br>
@@ -9,7 +9,7 @@
       <ng-container matColumnDef="_id">
         <th mat-header-cell *matHeaderCellDef> ID </th>
         <td mat-cell *matCellDef="let element"> {{element._id}} </td>
-      </ng-container>
+      </ng-container>    
 
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Name </th>

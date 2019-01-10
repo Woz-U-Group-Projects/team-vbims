@@ -1,22 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Product } from './product.model';
+
+const httpOptions = { 
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProductService {
 
-  uri = 'http:localhost:8000';
+  private productsUrl = 'http://localhost:8000/products';
 
   constructor(private http:  HttpClient) { }
 
 
   getProducts() {
-    return this.http.get(`${this.uri}/products`);
+    return this.http.get(`${this.productsUrl}`);
   }
 
   getProductById(id) {
-    return this.http.get(`${this.uri}/products/${id}`);
+    return this.http.get(`${this.productsUrl}/products/${id}`);
   }
 
   addProduct(name, description, numberInStock, cost, supplier){
@@ -28,7 +35,7 @@ export class ProductService {
       supplier: supplier,
      
     };
-    return this.http.post(`${this.uri}/products/add`, product);
+    return this.http.post(`${this.productsUrl}/products/add`, product);
   }
   updateProduct(id, name, description, numberInStock, cost, supplier, status) {
     const product = {
@@ -39,9 +46,9 @@ export class ProductService {
       supplier: supplier,
       status: status
     };
-    return this.http.post(`${this.uri}/products/update/${id}`, product);
+    return this.http.post(`${this.productsUrl}/products/update/${id}`, product);
 }
   deleteProduct(id) {
-    return this.http.get(`${this.uri}/products/delete/${id}`);
+    return this.http.get(`${this.productsUrl}/products/delete/${id}`);
   }
 }  

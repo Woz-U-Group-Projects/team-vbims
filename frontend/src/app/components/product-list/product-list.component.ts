@@ -15,7 +15,7 @@ export class ProductListComponent implements OnInit {
   products: Product[];
   displayedColumns = ['_id', 'name', 'description', 'numberInStock', 'cost', 'supplier'];
 
-  constructor(private productService: ProductService, private router: Router) { }
+  constructor(public productService: ProductService, public router: Router) { }
 
   ngOnInit() {
     this.fetchProducts();
@@ -31,12 +31,12 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  editProduct(id) {
-    this.router.navigate([`/edit/${id}`]);
+  editProduct(_id) {
+    this.router.navigate([`/edit/${_id}`]);
   }
 
-  deleteProduct(id) {
-    this.productService.deleteProduct(id).subscribe(() => {
+  deleteProduct(_id) {
+    this.productService.deleteProduct(_id).subscribe(() => {
       this.fetchProducts();
     });
   }

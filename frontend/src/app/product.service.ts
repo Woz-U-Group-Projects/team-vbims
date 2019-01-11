@@ -37,18 +37,19 @@ export class ProductService {
     };
     return this.http.post(`${this.productsUrl}/add`, product);
   }
-  updateProduct(id, name, description, numberInStock, cost, supplier, status) {
+
+
+  updateProduct(id, name, description, numberInStock, cost, supplier) {
     const product = {
       name: name,
       description: description,
       numberInStock: numberInStock,
       cost: cost,
-      supplier: supplier,
-      status: status
+      supplier: supplier
     };
-    return this.http.post(`${this.productsUrl}/products/update/${id}`, product);
+    return this.http.post(`${this.productsUrl}/update/${id}`, product);
 }
   deleteProduct(id) {
-    return this.http.get(`${this.productsUrl}/products/delete/${id}`);
+    return this.http.get(`${this.productsUrl}/delete/${id}`);
   }
 }  

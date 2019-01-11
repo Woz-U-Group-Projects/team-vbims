@@ -42,15 +42,13 @@ router.route('/products').get((req, res) =>{
 
 
 router.route('/products/:id').get((req, res) =>{
-    product.findById(req.params.id, (err, prodcut) => {
+    Product.findById(req.params.id, (err, product) => {
         if (err)
             console.log(err);
         else
-            res.json(prodcut);
+            res.json(product);
     });
 });
-
-// geting product frm the database by id 
 
 
 
@@ -68,7 +66,7 @@ router.route('/products/add').post((req, res) => {
 });
 
 router.route('/products/update/:id').post((req, res) => {
-    product.findById(req.params.id, (err, product) => {
+    Product.findById(req.params.id, (err, product) => {
         if (!Product)
             return next(new Error('Not Able To Load Doc'));
         else {
@@ -77,7 +75,6 @@ router.route('/products/update/:id').post((req, res) => {
             product.numberInStock = req.body.numberInStock;
             product.cost = req.body.cost;
             product.supplier = req.body.supplier;
-            product.status = req.body.status;
 
 
             product.save().then(issue => {

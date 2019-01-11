@@ -1,3 +1,31 @@
-<p>
-  edit-product works!
-</p>
+<div>
+    <br>
+    <mat-card>
+      <section class="mat-typography">
+          <h3>Update Number In Stock</h3>
+      </section>
+      <mat-divider></mat-divider>
+      <br>
+      <form [formGroup]="updateForm" class="edit-form">
+        <mat-form-field class="field-full-width">
+          <input placeholder="Name" matInput formControlName="name" #name>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input placeholder="Description" matInput formControlName="description" #description>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input placeholder="Number In Stock" matInput formControlName="numberInStock" #numberInStock>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input placeholder="Cost" matInput formControlName="cost" #cost>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input placeholder="Supplier" matInput formControlName="supplier" #supplier>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <br><br>
+        <button mat-raised-button color="accent" routerLink="/productslist">Back</button>&nbsp;
+        <button type="submit" (click)="updateProduct(numberInStock.value)" [disabled]="updateForm.pristine || updateForm.invalid" mat-raised-button color="primary">Save</button>
+      </form>
+    </mat-card>
+</div>

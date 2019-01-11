@@ -9,7 +9,7 @@ import { ProductService } from './product.service';
 
 const routes: Routes = [
   {path:'add', component: AddProductComponent},
-  { path: 'update/id', component: EditProductComponent },
+  { path: 'edit/:id', component: EditProductComponent },
   { path: 'productslist', component: ProductListComponent },
   { path: '', redirectTo: 'productslist', pathMatch: 'full' },
 

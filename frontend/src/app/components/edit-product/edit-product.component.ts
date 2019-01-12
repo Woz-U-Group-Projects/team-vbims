@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 import { MatSnackBar } from '@angular/material';
 
@@ -20,6 +20,13 @@ export class EditProductComponent implements OnInit {
 
   constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute, private snackBar: MatSnackBar, private fb: FormBuilder) {
     this.createForm();
+    this.updateForm = fb.group({
+      name: new FormControl(),
+      description: new FormControl(),
+      numberInStock: new FormControl(),
+      cost: new FormControl(),
+      supplier: new FormControl()
+    })
    }
 
   ngOnInit() {
@@ -38,7 +45,7 @@ export class EditProductComponent implements OnInit {
 
   createForm() {
     this.updateForm = this.fb.group({
-      name: ['', Validators.required],
+      name: '',
       descripton: '',
       numberInStock: '',
       cost: '',

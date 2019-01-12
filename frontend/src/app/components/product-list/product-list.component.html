@@ -1,6 +1,11 @@
 <div>
   <br>
   <mat-card>
+    <input placeholder="Search Inventory By Name" matInput formControlName="search" #search>
+    <button mat-raised-button color="primary" (click)="findByName(search.value)">Search</button>
+    <br><br>
+    <mat-divider></mat-divider>
+    <br>
     <button mat-raised-button color="primary" routerLink="/add">Add New Inventory</button>
     <br><br>
     <mat-divider></mat-divider>

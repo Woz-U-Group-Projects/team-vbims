@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Product } from './product.model';
+import { HttpClient } from '@angular/common/http';
 
-const httpOptions = { 
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +27,7 @@ export class ProductService {
       description: description,
       numberInStock: numberInStock,
       cost: cost,
-      supplier: supplier,
+      supplier: supplier
      
     };
     return this.http.post(`${this.productsUrl}/add`, product);
@@ -48,9 +43,7 @@ export class ProductService {
       supplier: supplier
     };
     return this.http.post(`${this.productsUrl}/update/${id}`, product);
-}
-
-
+  }
 
   deleteProduct(id) {
     return this.http.get(`${this.productsUrl}/delete/${id}`);

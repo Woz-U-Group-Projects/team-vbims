@@ -67,8 +67,8 @@ router.route('/products/add').post((req, res) => {
 
 router.route('/products/update/:id').post((req, res) => {
     Product.findById(req.params.id, (err, product) => {
-        if (!Product)
-            return next(new Error('Not Able To Load Doc'));
+        if (!product)
+            return next(new Error('Could not load Document'));
         else {
             product.name = req.body.name;
             product.description = req.body.description;
@@ -76,8 +76,7 @@ router.route('/products/update/:id').post((req, res) => {
             product.cost = req.body.cost;
             product.supplier = req.body.supplier;
 
-
-            product.save().then(issue => {
+            product.save().then(product => {
                 res.json('Update complete');
             }).catch(err => {
                 res.status(400).send('Update failed')

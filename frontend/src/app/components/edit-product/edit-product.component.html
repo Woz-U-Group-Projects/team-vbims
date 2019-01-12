@@ -2,7 +2,7 @@
     <br>
     <mat-card>
       <section class="mat-typography">
-          <h3>Update Number In Stock</h3>
+          <h3>Update Inventory</h3>
       </section>
       <mat-divider></mat-divider>
       <br>
@@ -25,7 +25,7 @@
         <mat-divider></mat-divider>
         <br><br>
         <button mat-raised-button color="accent" routerLink="/productslist">Back</button>&nbsp;
-        <button type="submit" (click)="updateProduct(numberInStock.value)" [disabled]="updateForm.pristine || updateForm.invalid" mat-raised-button color="primary">Save</button>
+        <button type="submit" (click)="updateProduct(name.value, description.value, numberInStock.value, cost.value, supplier.value)" [disabled]="updateForm.pristine || updateForm.invalid" mat-raised-button color="primary">Save</button>
       </form>
     </mat-card>
 </div>

@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 let Product = new Schema({
     id: {
-        type: Number
+        type: String
     },
     name: {
         type: String
@@ -15,14 +15,10 @@ let Product = new Schema({
         type: Number
     },
     cost: {
-        type: Number
+        type: String
     },
     supplier: {
         type: String
-    },
-    status: {
-        type: String,
-        default: 'Open'
     }
 });
 

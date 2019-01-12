@@ -1,5 +1,5 @@
 export interface Product {
-    _id: String;
+    id: String;
     name: String;
     description: String;
     numberInStock: String;

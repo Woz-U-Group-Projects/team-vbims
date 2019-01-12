@@ -32,8 +32,8 @@ export class EditProductComponent implements OnInit {
         this.updateForm.get('numberInStock').setValue(this.product.numberInStock);
         this.updateForm.get('cost').setValue(this.product.cost);
         this.updateForm.get('supplier').setValue(this.product.supplier);
-      })
-    })
+      });
+    });
   }
 
   createForm() {
@@ -51,6 +51,7 @@ export class EditProductComponent implements OnInit {
       this.snackBar.open('Product updated successfully', 'OK', {
         duration: 3000,
       });
+      this.router.navigate(['/productslist']);
     });
   }
 

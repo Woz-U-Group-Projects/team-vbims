@@ -28,7 +28,6 @@ export class ProductService {
       numberInStock: numberInStock,
       cost: cost,
       supplier: supplier
-     
     };
     return this.http.post(`${this.productsUrl}/add`, product);
   }

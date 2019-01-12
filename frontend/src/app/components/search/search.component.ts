@@ -5,12 +5,14 @@ import { MatTableDataSource } from '@angular/material';
 import { Product } from '../../product.model';
 import { ProductService } from 'src/app/product.service';
 
+
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-export class ProductListComponent implements OnInit {
+
+export class SearchComponent implements OnInit {
 
   products: Product[];
   displayedColumns = ['_id', 'name', 'description', 'numberInStock', 'cost', 'supplier'];
@@ -29,20 +31,6 @@ export class ProductListComponent implements OnInit {
       console.log('Data requested ... ');
       console.log(this.products);
     });
-  }
-
-  editProduct(_id) {
-    this.router.navigate([`/edit/${_id}`]);
-  }
-
-  deleteProduct(_id) {
-    this.productService.deleteProduct(_id).subscribe(() => {
-      this.fetchProducts();
-    });
-  }
-
-  searchById(name) {
-    
   }
 
 }

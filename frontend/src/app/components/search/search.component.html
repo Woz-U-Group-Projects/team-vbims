@@ -1,0 +1,51 @@
+<div>
+    <br>
+    <mat-card>
+      <input placeholder="Search Inventory By Name" matInput formControlName="search" #search>
+      <button mat-raised-button color="primary" routerLink="/search">Search</button>
+      <br><br>
+      <mat-divider></mat-divider>
+      <br>
+      <button mat-raised-button color="primary" routerLink="/add">Add New Inventory</button>
+      <br><br>
+      <mat-divider></mat-divider>
+      <br>
+      <table mat-table [dataSource]="products">
+        <ng-container matColumnDef="_id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+        </ng-container>    
+  
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> Description </th>
+          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="numberInStock">
+          <th mat-header-cell *matHeaderCellDef> Number in Stock </th>
+          <td mat-cell *matCellDef="let element"> 
+            {{element.numberInStock}}
+            <button mat-button color="primary" (click)="editProduct(element._id)">Edit</button> 
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="cost">
+          <th mat-header-cell *matHeaderCellDef> Cost </th>
+          <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="supplier">
+          <th mat-header-cell *matHeaderCellDef> Supplier </th>
+          <td mat-cell *matCellDef="let element"> {{element.supplier}} </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card>
+  </div>

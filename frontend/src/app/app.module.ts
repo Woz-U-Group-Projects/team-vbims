@@ -22,13 +22,15 @@ import { MatToolbarModule,
          MatTableModule,
          MatDividerModule,
          MatSnackBarModule } from '@angular/material';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     AddProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

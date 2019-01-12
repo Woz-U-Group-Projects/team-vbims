@@ -49,6 +49,9 @@ export class ProductService {
     };
     return this.http.post(`${this.productsUrl}/update/${id}`, product);
 }
+
+
+
   deleteProduct(id) {
     return this.http.get(`${this.productsUrl}/delete/${id}`);
   }

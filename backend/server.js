@@ -4,8 +4,6 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import Product from './models/product';
 
-import { runInNewContext } from 'vm';
-
 const app = express();
 const router = express.Router();
 
@@ -38,7 +36,14 @@ router.route('/products').get((req, res) =>{
     });
 });
 
-
+router.route('/products/search/:name').get((req, res) =>{
+    Product.find({ name: req.params.name }, (err, products) => {
+        if (err)
+            console.log(err);
+        else
+            res.json(products)
+    });
+});
 
 
 router.route('/products/:id').get((req, res) =>{
@@ -49,8 +54,6 @@ router.route('/products/:id').get((req, res) =>{
             res.json(product);
     });
 });
-
-
 
 
 router.route('/products/add').post((req, res) => {

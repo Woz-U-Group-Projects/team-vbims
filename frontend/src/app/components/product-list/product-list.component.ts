@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatTableDataSource } from '@angular/material';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { Product } from '../../product.model';
 import { ProductService } from 'src/app/product.service';
@@ -10,12 +10,18 @@ import { ProductService } from 'src/app/product.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
+
 export class ProductListComponent implements OnInit {
 
+  searchForm: FormGroup;
   products: Product[];
   displayedColumns = ['_id', 'name', 'description', 'numberInStock', 'cost', 'supplier'];
 
-  constructor(public productService: ProductService, public router: Router) { }
+  constructor(public productService: ProductService, public router: Router, private fb: FormBuilder) {
+    this.searchForm = this.fb.group({
+      search: ''
+    });
+  }
 
   ngOnInit() {
     this.fetchProducts();
@@ -41,8 +47,9 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  searchById(name) {
-    
+  searchByName(name) {
+    this.productService.searchByName(name).subscribe
+    this.router.navigate([`/products/search/${name}`]);
   }
 
 }

@@ -21,6 +21,10 @@ export class ProductService {
     return this.http.get(`${this.productsUrl}/${id}`);
   }
 
+  searchByName(name) {
+    return this.http.get(`${this.productsUrl}/search/${name}`);
+  }
+
   addProduct(name, description, numberInStock, cost, supplier){
     const product = {
       name: name,

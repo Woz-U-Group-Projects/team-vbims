@@ -9,10 +9,10 @@ import { ProductService } from './product.service';
 import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
-  {path:'add', component: AddProductComponent},
+  { path:'add', component: AddProductComponent},
   { path: 'edit/:id', component: EditProductComponent },
   { path: 'productslist', component: ProductListComponent },
-  { path: 'search', component: SearchComponent},
+  { path: 'products/search/:name', component: SearchComponent},
   { path: '', redirectTo: 'productslist', pathMatch: 'full' },
 
 ];

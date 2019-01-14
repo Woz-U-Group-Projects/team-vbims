@@ -8,15 +8,16 @@ import { ProductService } from '../../product.service';
 import { Product } from '../../product.model';
 
 @Component({
-  selector: 'app-edit-product',
-  templateUrl: './edit-product.component.html',
-  styleUrls: ['./edit-product.component.css']
+  selector: 'app-details',
+  templateUrl: './details.component.html',
+  styleUrls: ['./details.component.css']
 })
-export class EditProductComponent implements OnInit {
+export class DetailsComponent implements OnInit {
 
   id: String;
   product: any = {};
   updateForm: FormGroup;
+  products: Product[];
 
   constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute, private snackBar: MatSnackBar, private fb: FormBuilder) {
     this.createForm();
@@ -59,6 +60,23 @@ export class EditProductComponent implements OnInit {
         duration: 3000,
       });
       this.router.navigate(['/productslist']);
+    });
+  }
+
+  deleteProduct() {
+    this.productService.deleteProduct(this.id).subscribe(() => {
+      this.fetchProducts();
+      this.router.navigate(['/productslist']);
+    });
+  }
+
+  fetchProducts() {
+    this.productService
+    .getProducts()
+    .subscribe((data: Product[]) => {
+      this.products = data;
+      console.log('Data requested ... ');
+      console.log(this.products);
     });
   }
 

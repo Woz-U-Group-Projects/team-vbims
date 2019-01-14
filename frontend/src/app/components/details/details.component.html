@@ -2,26 +2,31 @@
     <br>
     <mat-card>
       <section class="mat-typography">
-          <h3>Update Inventory</h3>
+          <h2>Update Inventory</h2>
       </section>
       <mat-divider></mat-divider>
       <br>
       <form [formGroup]="updateForm" class="edit-form">
-        <mat-form-field class="field-full-width">
-          <input placeholder="Name" matInput formControlName="name" #name>
+        <mat-form-field class="field-full-width" id="name">
+          <textarea matInput placeholder="Name" matInput formControlName="name" #name></textarea>
         </mat-form-field>
-        <mat-form-field class="field-full-width">
-          <input placeholder="Description" matInput formControlName="description" #description>
+        <mat-form-field class="field-full-width"  id="description">
+          <textarea placeholder="Description" matInput formControlName="description" #description></textarea>
         </mat-form-field>
         <mat-form-field class="field-full-width">
           <input placeholder="Number In Stock" matInput formControlName="numberInStock" #numberInStock>
         </mat-form-field>
+        <div class="divider"></div>
         <mat-form-field class="field-full-width">
           <input placeholder="Cost" matInput formControlName="cost" #cost>
         </mat-form-field>
+        <div class="divider"></div>
         <mat-form-field class="field-full-width">
           <input placeholder="Supplier" matInput formControlName="supplier" #supplier>
         </mat-form-field>
+        <br>
+        <button  type="button" (click)="deleteProduct()" mat-raised-button color="warn">Delete Item From Inventory</button>
+        <br><br>
         <mat-divider></mat-divider>
         <br><br>
         <button mat-raised-button color="accent" routerLink="/productslist">Back</button>&nbsp;

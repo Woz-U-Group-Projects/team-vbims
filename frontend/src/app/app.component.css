@@ -1,0 +1,8 @@
+*  {
+    font-family: 'Sarabun', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}

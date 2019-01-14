@@ -8,11 +8,11 @@ import { ProductService } from '../../product.service';
 import { Product } from '../../product.model';
 
 @Component({
-  selector: 'app-edit-product',
-  templateUrl: './edit-product.component.html',
-  styleUrls: ['./edit-product.component.css']
+  selector: 'app-details',
+  templateUrl: './details.component.html',
+  styleUrls: ['./details.component.css']
 })
-export class EditProductComponent implements OnInit {
+export class DetailsComponent implements OnInit {
 
   id: String;
   product: any = {};

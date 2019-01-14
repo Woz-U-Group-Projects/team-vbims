@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
-import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { DetailsComponent } from './components/details/details.component';
 import { ProductService } from './product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -29,7 +29,7 @@ import { SearchComponent } from './components/search/search.component';
     AppComponent,
     ProductListComponent,
     AddProductComponent,
-    EditProductComponent,
+    DetailsComponent,
     SearchComponent
   ],
   imports: [

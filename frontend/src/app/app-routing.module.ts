@@ -7,13 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProductService } from './product.service';
 import { SearchComponent } from './components/search/search.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  { path: 'login', component: LoginComponent },
   { path:'add', component: AddProductComponent},
   { path: 'edit/:id', component: EditProductComponent },
   { path: 'productslist', component: ProductListComponent },
   { path: 'products/search/:name', component: SearchComponent},
-  { path: '', redirectTo: 'productslist', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
 
 ];
 

@@ -4,8 +4,10 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import Product from './models/product';
 
+
 const app = express();
 const router = express.Router();
+
 
 
 
@@ -24,6 +26,8 @@ connection.once('open', () => {
     console.log('MongoDB connected Successfuly!');
 
 });
+
+
 
 // endpoints configuration 
 

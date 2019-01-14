@@ -8,7 +8,11 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { ProductService } from './product.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SearchComponent } from './components/search/search.component';
+import { LoginComponent } from './login/login.component';
+
+
 
 // Imports for Material Desing
 import { MatToolbarModule,
@@ -22,7 +26,7 @@ import { MatToolbarModule,
          MatTableModule,
          MatDividerModule,
          MatSnackBarModule } from '@angular/material';
-import { SearchComponent } from './components/search/search.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +34,8 @@ import { SearchComponent } from './components/search/search.component';
     ProductListComponent,
     AddProductComponent,
     EditProductComponent,
-    SearchComponent
+    SearchComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,8 @@ import { SearchComponent } from './components/search/search.component';
     MatDividerModule,
     MatSnackBarModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

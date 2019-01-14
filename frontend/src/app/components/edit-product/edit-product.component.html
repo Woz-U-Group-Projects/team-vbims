@@ -22,6 +22,8 @@
         <mat-form-field class="field-full-width">
           <input placeholder="Supplier" matInput formControlName="supplier" #supplier>
         </mat-form-field>
+        <br>
+        <button  type="button" (click)="deleteProduct()" mat-raised-button color="Warn">Delete Item From Inventory</button>
         <mat-divider></mat-divider>
         <br><br>
         <button mat-raised-button color="accent" routerLink="/productslist">Back</button>&nbsp;

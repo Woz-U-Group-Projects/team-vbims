@@ -1,0 +1,19 @@
+.create-form {
+    min-width: 500px;
+    width: 100%;
+  }
+
+
+#name {
+    width: 33%;
+}
+
+#description {
+    width: 100%;
+}
+
+.divider{
+    width: 5px;
+    height: auto;
+    display: inline-block;
+}

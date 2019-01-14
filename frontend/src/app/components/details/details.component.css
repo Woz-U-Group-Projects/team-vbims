@@ -4,9 +4,15 @@
   }
 
 #name {
-    width: 33%
+    width: 33%;
 }
 
 #description {
-    width: 100%
+    width: 100%;
+}
+
+.divider{
+    width: 5px;
+    height: auto;
+    display: inline-block;
 }

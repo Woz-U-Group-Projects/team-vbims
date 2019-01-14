@@ -2,14 +2,13 @@
   <br>
   <mat-card>
     <form [formGroup]='searchForm' class="search-form">
-      <input placeholder="Search Inventory By Name" matInput formControlName="search" #search>
+      <input placeholder="Search Inventory By Name" matInput formControlName="search" #search class="search-bar">
       <button mat-raised-button color="primary" (click)="searchByName(search.value)">Search</button>
-      <br><br>
+      <div class="divider"></div>
+      <button mat-raised-button color="primary" routerLink="/add" class="add-button">Add New Inventory</button>
     </form>
-    <mat-divider></mat-divider>
+    
     <br>
-    <button mat-raised-button color="primary" routerLink="/add">Add New Inventory</button>
-    <br><br>
     <mat-divider></mat-divider>
     <br>
     <table mat-table [dataSource]="products">

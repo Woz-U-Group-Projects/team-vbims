@@ -7,20 +7,24 @@
     <mat-divider></mat-divider>
     <br>
     <form [formGroup]="createForm" class="create-form">
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Name" formControlName="name" #name>
+      <mat-form-field class="field-full-width" id="name">
+        <textarea matInput placeholder="Name" formControlName="name" #name></textarea>
       </mat-form-field>
-      <mat-form-field class="field-full-width">
-        <input matInput placeholder="Description" formControlName="description" #description>
+      <br>
+      <mat-form-field class="field-full-width" id="description">
+        <textarea matInput placeholder="Description" formControlName="description" #description></textarea>
       </mat-form-field>
+      <br>
       <mat-form-field class="field-full-width">
-        <textarea matInput placeholder="Number In Stock" formControlName="numberInStock" #numberInStock></textarea>
+        <input matInput placeholder="Number In Stock" formControlName="numberInStock" #numberInStock>
       </mat-form-field>
+      <div class="divider"></div>
       <mat-form-field class="field-full-width">
-        <textarea matInput placeholder="Cost" formControlName="cost" #cost></textarea>
+        <input matInput placeholder="Cost" formControlName="cost" #cost>
       </mat-form-field>
+      <div class="divider"></div>
       <mat-form-field class="field-full-width">
-        <textarea matInput placeholder="Supplier" formControlName="supplier" #supplier></textarea>
+        <input matInput placeholder="Supplier" formControlName="supplier" #supplier>
       </mat-form-field>
       <mat-divider></mat-divider>
       <br><br>

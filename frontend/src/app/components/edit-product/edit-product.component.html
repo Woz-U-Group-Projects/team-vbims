@@ -8,19 +8,19 @@
       <br>
       <form [formGroup]="updateForm" class="edit-form">
         <mat-form-field class="field-full-width">
-          <input placeholder="Name" matInput formControlName="name" #name>
+          <textarea matInput placeholder="Name" matInput formControlName="name" #name></textarea>
+        </mat-form-field>
+        <mat-form-field class="field-full-width"  id="description">
+          <textarea placeholder="Description" matInput formControlName="description" #description></textarea>
         </mat-form-field>
         <mat-form-field class="field-full-width">
-          <input placeholder="Description" matInput formControlName="description" #description>
+          <textarea placeholder="Number In Stock" matInput formControlName="numberInStock" #numberInStock></textarea>
         </mat-form-field>
         <mat-form-field class="field-full-width">
-          <input placeholder="Number In Stock" matInput formControlName="numberInStock" #numberInStock>
+          <textarea placeholder="Cost" matInput formControlName="cost" #cost></textarea>
         </mat-form-field>
         <mat-form-field class="field-full-width">
-          <input placeholder="Cost" matInput formControlName="cost" #cost>
-        </mat-form-field>
-        <mat-form-field class="field-full-width">
-          <input placeholder="Supplier" matInput formControlName="supplier" #supplier>
+          <textarea placeholder="Supplier" matInput formControlName="supplier" #supplier></textarea>
         </mat-form-field>
         <br>
         <button  type="button" (click)="deleteProduct()" mat-raised-button color="Warn">Delete Item From Inventory</button>

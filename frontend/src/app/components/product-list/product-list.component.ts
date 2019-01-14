@@ -5,6 +5,11 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Product } from '../../product.model';
 import { ProductService } from 'src/app/product.service';
 
+export interface Filter {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -16,6 +21,11 @@ export class ProductListComponent implements OnInit {
   searchForm: FormGroup;
   products: Product[];
   displayedColumns = ['_id', 'name', 'description', 'numberInStock', 'cost', 'supplier'];
+
+  filters: Filter[] = [
+    { value: 'name', viewValue: 'Product Name' },
+    { value: 'id', viewValue: 'Product ID' }
+  ];
 
   constructor(public productService: ProductService, public router: Router, private fb: FormBuilder) {
     this.searchForm = this.fb.group({

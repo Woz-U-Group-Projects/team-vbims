@@ -6,15 +6,16 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProductService } from './product.service';
-import { SearchComponent } from './components/search/search.component';
+import { SearchByNameComponent } from './components/search-by-name/search-by-name.component';
+import { SearchByIdComponent } from './components/search-by-id/search-by-id.component';
 
 const routes: Routes = [
   { path:'add', component: AddProductComponent},
-  { path: 'edit/:id', component: DetailsComponent },
+  { path: 'details/:id', component: DetailsComponent },
   { path: 'productslist', component: ProductListComponent },
-  { path: 'products/search/:name', component: SearchComponent},
+  { path: 'products/search-name/:name', component: SearchByNameComponent},
+  { path: 'products/search-id/:id', component: SearchByIdComponent },  
   { path: '', redirectTo: 'productslist', pathMatch: 'full' },
-
 ];
 
 @NgModule({

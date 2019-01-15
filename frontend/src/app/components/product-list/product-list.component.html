@@ -3,14 +3,14 @@
   <mat-card>
     <form [formGroup]='searchForm' class="search-form">
       <mat-form-field>
-        <mat-select placeholder="Filter...">
+        <mat-select [(value)]="selected" placeholder="Filter Search..." id="filterSelector">
           <mat-option *ngFor="let filter of filters" [value]="filter.value">
             {{filter.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <input placeholder="Search Inventory By Name" matInput formControlName="search" #search class="search-bar">
-      <button mat-raised-button color="primary" (click)="searchByName(search.value)">Search</button>
+      <input placeholder="Search Inventory By Name" formControlName="search" #search class="search-bar">
+      <button mat-raised-button color="primary" (click)="searchBy(search.value, selected)">Search</button>
       <div class="divider"></div>
       <button mat-raised-button color="primary" routerLink="/add" class="add-button">Add New Inventory</button>
     </form>

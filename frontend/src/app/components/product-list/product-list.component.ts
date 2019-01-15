@@ -18,14 +18,14 @@ export interface Filter {
 
 export class ProductListComponent implements OnInit {
 
+  filters: Filter[] =[
+    {value: "name", viewValue: "Product Name"},
+    {value: "id",  viewValue: "Product ID"}
+  ];
+
   searchForm: FormGroup;
   products: Product[];
   displayedColumns = ['_id', 'name', 'description', 'numberInStock', 'cost', 'supplier'];
-
-  filters: Filter[] = [
-    { value: 'name', viewValue: 'Product Name' },
-    { value: 'id', viewValue: 'Product ID' }
-  ];
 
   constructor(public productService: ProductService, public router: Router, private fb: FormBuilder) {
     this.searchForm = this.fb.group({
@@ -48,7 +48,7 @@ export class ProductListComponent implements OnInit {
   }
 
   editProduct(_id) {
-    this.router.navigate([`/edit/${_id}`]);
+    this.router.navigate([`/details/${_id}`]);
   }
 
   deleteProduct(_id) {
@@ -57,9 +57,18 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  searchByName(name) {
-    this.productService.searchByName(name).subscribe
-    this.router.navigate([`/products/search/${name}`]);
-  }
+  searchBy(searchValue, filter) {
+
+    console.log(filter);
+
+    if (filter == "name") {
+      this.productService.searchByName(searchValue).subscribe
+      this.router.navigate([`/products/search-name/${searchValue}`]);
+    }
+    if (filter == "id") {
+      this.productService.searchById(searchValue).subscribe
+      this.router.navigate([`products/search-id/${searchValue}`]);
+    };
+  };
 
 }

@@ -9,8 +9,9 @@ import { DetailsComponent } from './components/details/details.component';
 import { ProductService } from './product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SearchByNameComponent } from './components/search-by-name/search-by-name.component';
 
-// Imports for Material Desing
+// Imports for Material Design
 import { MatToolbarModule,
          MatFormFieldModule,
          MatInputModule,
@@ -22,7 +23,8 @@ import { MatToolbarModule,
          MatTableModule,
          MatDividerModule,
          MatSnackBarModule } from '@angular/material';
-import { SearchComponent } from './components/search/search.component';
+import { SearchByIdComponent } from './components/search-by-id/search-by-id.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { SearchComponent } from './components/search/search.component';
     ProductListComponent,
     AddProductComponent,
     DetailsComponent,
-    SearchComponent
+    SearchByNameComponent,
+    SearchByIdComponent
   ],
   imports: [
     BrowserModule,

@@ -6,23 +6,23 @@ import { ProductService } from 'src/app/product.service';
 
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  selector: 'app-search-by-id',
+  templateUrl: './search-by-id.component.html',
+  styleUrls: ['./search-by-id.component.css']
 })
 
-export class SearchComponent implements OnInit {
+export class SearchByIdComponent implements OnInit {
 
-  name: String;
+  id: String;
   products: Product[];
   displayedColumns = ['_id', 'name', 'description', 'numberInStock', 'cost', 'supplier'];
 
   constructor(public productService: ProductService, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // Grab the search keyword (name) from the URL
+    // Grab the search keyword (id) from the URL
     this.route.params.subscribe(params => {
-      this.name = params.name;
+      this.id = params.id;
     });
 
     this.fetchProducts();
@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit {
 
   fetchProducts() {
     this.productService
-    .searchByName(this.name)
+    .searchById(this.id)
     .subscribe((data: Product[]) => {
       this.products = data;
       console.log('Data requested ... ');

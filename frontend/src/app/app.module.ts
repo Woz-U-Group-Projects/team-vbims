@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
@@ -9,12 +10,9 @@ import { DetailsComponent } from './components/details/details.component';
 import { ProductService } from './product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { SearchComponent } from './components/search/search.component';
-import { LoginComponent } from './login/login.component';
+import { SearchByNameComponent } from './components/search-by-name/search-by-name.component';
 
-
-
-// Imports for Material Desing
+// Imports for Material Design
 import { MatToolbarModule,
          MatFormFieldModule,
          MatInputModule,
@@ -26,6 +24,12 @@ import { MatToolbarModule,
          MatTableModule,
          MatDividerModule,
          MatSnackBarModule } from '@angular/material';
+import { SearchByIdComponent } from './components/search-by-id/search-by-id.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+// import { SearchComponent } from './components/search/search.component';
+import { UserService } from './user.service';
+
 
 
 @NgModule({
@@ -35,12 +39,14 @@ import { MatToolbarModule,
     AddProductComponent,
 // <<<<<<< HEAD
     // EditProductComponent,
-    SearchComponent,
+    // SearchComponent,
     LoginComponent,
 // =======
     DetailsComponent,
-    SearchComponent
-// >>>>>>> 4a3d0a5e7ae2265bdff7278335b64788404cfe32
+    SearchByNameComponent,
+    SearchByIdComponent,
+    RegisterComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -61,7 +67,7 @@ import { MatToolbarModule,
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [ProductService],
+  providers: [ProductService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

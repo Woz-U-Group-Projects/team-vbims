@@ -21,8 +21,12 @@ export class ProductService {
     return this.http.get(`${this.productsUrl}/${id}`);
   }
 
+  searchById(id)  {
+    return this.http.get(`${this.productsUrl}/search-id/${id}`);
+  }
+
   searchByName(name) {
-    return this.http.get(`${this.productsUrl}/search/${name}`);
+    return this.http.get(`${this.productsUrl}/search-name/${name}`);
   }
 
   addProduct(name, description, numberInStock, cost, supplier){

@@ -40,12 +40,21 @@ router.route('/products').get((req, res) =>{
     });
 });
 
-router.route('/products/search/:name').get((req, res) =>{
+router.route('/products/search-name/:name').get((req, res) =>{
     Product.find({ name: req.params.name }, (err, products) => {
         if (err)
             console.log(err);
         else
             res.json(products)
+    });
+});
+
+router.route('/products/search-id/:id').get((req, res) =>{
+    Product.find({ _id: req.params.id }, (err, product) => {
+        if (err)
+            console.log(err);
+        else
+            res.json(product);
     });
 });
 

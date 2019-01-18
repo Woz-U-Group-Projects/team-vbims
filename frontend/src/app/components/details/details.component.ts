@@ -22,6 +22,7 @@ export class DetailsComponent implements OnInit {
   constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute, private snackBar: MatSnackBar, private fb: FormBuilder) {
     this.createForm();
     this.updateForm = fb.group({
+      id: new FormControl(),
       name: new FormControl(),
       description: new FormControl(),
       numberInStock: new FormControl(),
@@ -35,6 +36,7 @@ export class DetailsComponent implements OnInit {
       this.id = params.id;
       this.productService.getProductById(this.id).subscribe(res => {
         this.product = res;
+        this.updateForm.get('id').setValue(this.product._id);
         this.updateForm.get('name').setValue(this.product.name);
         this.updateForm.get('description').setValue(this.product.description);
         this.updateForm.get('numberInStock').setValue(this.product.numberInStock);
@@ -46,6 +48,7 @@ export class DetailsComponent implements OnInit {
 
   createForm() {
     this.updateForm = this.fb.group({
+      id: '',
       name: '',
       descripton: '',
       numberInStock: '',

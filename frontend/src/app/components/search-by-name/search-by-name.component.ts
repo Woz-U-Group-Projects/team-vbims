@@ -39,7 +39,7 @@ export class SearchByNameComponent implements OnInit {
   }
 
   editProduct(_id) {
-    this.router.navigate([`/edit/${_id}`]);
+    this.router.navigate([`/details/${_id}`]);
   }
 
 }

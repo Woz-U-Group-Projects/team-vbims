@@ -7,6 +7,10 @@
       <mat-divider></mat-divider>
       <br>
       <form [formGroup]="updateForm" class="edit-form">
+          <mat-form-field class="field-full-width" id="id">
+            <textarea matInput placeholder="ID" matInput formControlName="id" #id></textarea>
+          </mat-form-field>
+          <br>
         <mat-form-field class="field-full-width" id="name">
           <textarea matInput placeholder="Name" matInput formControlName="name" #name></textarea>
         </mat-form-field>

@@ -27,6 +27,7 @@ export class ProductListComponent implements OnInit {
     {value: "id",  viewValue: "Product ID"}
   ];
 
+  username: String;
   searchForm: FormGroup;
   products: Product[];
   displayedColumns = ['_id', 'name', 'description', 'numberInStock', 'cost', 'supplier'];
@@ -42,9 +43,9 @@ export class ProductListComponent implements OnInit {
         );
   }
 
-  // addName(data) {
-  //   this.username = data.username;
-  // }
+   addName(data) {
+     this.username = data.username;
+   }
 
   ngOnInit() {
     this.fetchProducts();

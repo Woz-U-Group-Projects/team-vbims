@@ -1,3 +1,13 @@
+#greeting  {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .search-form {
     display: flex;
     justify-content: center;
@@ -15,3 +25,36 @@
     height: auto;
     display: inline-block;
 }
+
+mat-card {
+    width: 75%;
+    height: 75%;
+}
+
+#body {
+    display: flex;
+    padding-left: 25%;
+}
+
+mat-header-cell,
+mat-cell {
+    column-gap: 10%;
+}
+
+.description {
+    padding-left: 2%;
+}
+
+.numberInStock {
+    padding-left: 1%;
+}
+
+.cost {
+    padding-left: 2%;
+}
+
+.supplier {
+    white-space: nowrap;
+    padding-left: 2%;
+}
+

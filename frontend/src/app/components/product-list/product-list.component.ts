@@ -6,10 +6,12 @@ import { Product } from '../../product.model';
 import { ProductService } from 'src/app/product.service';
 import { UserService } from '../../user.service';
 
+
 export interface Filter {
   value: string;
   viewValue: string;
 }
+
 
 @Component({
   selector: 'app-product-list',
@@ -18,6 +20,8 @@ export interface Filter {
 })
 
 export class ProductListComponent implements OnInit {
+
+   username = this.username;
   
 
   filters: Filter[] =[

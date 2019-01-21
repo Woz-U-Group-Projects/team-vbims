@@ -58,3 +58,13 @@ mat-cell {
     padding-left: 2%;
 }
 
+td {
+    font-style: italic;
+    color: blue;
+}
+
+th {
+    font-weight: 900;
+    color: black;
+    font-size: 60;
+}

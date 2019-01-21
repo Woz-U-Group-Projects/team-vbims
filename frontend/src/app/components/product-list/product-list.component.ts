@@ -29,7 +29,6 @@ export class ProductListComponent implements OnInit {
     {value: "id",  viewValue: "Product ID"}
   ];
 
-  username: String;
   searchForm: FormGroup;
   products: Product[];
   displayedColumns = ['_id', 'name', 'description', 'numberInStock', 'cost', 'supplier'];

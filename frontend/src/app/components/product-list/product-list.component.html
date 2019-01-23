@@ -31,10 +31,12 @@
         <td mat-cell *matCellDef="let element">  </td>
       </ng-container>
 
+      <h1>
       <ng-container matColumnDef="name" id="name">
         <th mat-header-cell *matHeaderCellDef> Name </th>
         <td mat-cell *matCellDef="let element"> {{element.name}} </td>
       </ng-container>
+    </h1>
 
       <ng-container matColumnDef="description" id="description">
         <th mat-header-cell *matHeaderCellDef> Description </th>
@@ -53,8 +55,11 @@
 
       <ng-container matColumnDef="supplier" class="supplier"> 
         <th mat-header-cell class="supplier" *matHeaderCellDef> Supplier </th>
-        <td mat-cell class="supplier" *matCellDef="let element"> {{element.supplier}} <button mat-button color="primary" (click)="editProduct(element._id)">Details</button>  </td>
+        <td mat-cell class="supplier" *matCellDef="let element"> {{element.supplier}} <br> <button mat-button color="primary" (click)="editProduct(element._id)">Details</button>   </td>
       </ng-container>
+      <br>
+
+      
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

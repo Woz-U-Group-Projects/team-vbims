@@ -20,7 +20,6 @@ export class SearchByNameComponent implements OnInit {
   constructor(public productService: ProductService, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // Grab the search keyword (name) from the URL
     this.route.params.subscribe(params => {
       this.name = params.name;
     });

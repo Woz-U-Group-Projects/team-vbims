@@ -2,10 +2,14 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
 var passport = require('passport');
+
+
+// Secure Passport.js An Authentication Middleware using passprot local  we are using epxress session to to provide a persistant session funtionaity
+
+// this will create a cookie on the activities
+
+
 // /* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.send('respond with a resource');
-// });
 
 router.post('/register', function (req, res, next) {
   addToDB(req, res);

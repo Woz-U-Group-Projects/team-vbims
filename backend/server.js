@@ -3,7 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import Product from './models/product';
-
+//  middleware
 
 const app = express();
 const router = express.Router();
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 
 mongoose.connect('mongodb+srv://Brandon:Wozu12345@cluster0-awxzg.mongodb.net/products?retryWrites=true');
-
+// connection string to database
 
 const connection = mongoose.connection;
 

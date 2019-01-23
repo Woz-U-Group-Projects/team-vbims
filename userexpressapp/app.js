@@ -22,9 +22,13 @@ mongoose.connect('mongodb+srv://Brandon:Wozu12345@cluster0-awxzg.mongodb.net/use
 //passport
 var passport = require('passport');
 var session = require('express-session');
-//passport
-var passport = require('passport');
-var session = require('express-session');
+
+
+// Secure Passport.js An Authentication Middleware using passprot local  we are using epxress session to to provide a persistant session funtionaity
+
+// this will create a cookie on the activities
+
+
 // const MongoStore = require('connect-mongo')(session);
 app.use(session({
   name: 'myname.sid',
@@ -38,21 +42,7 @@ app.use(session({
   },
   // store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
-// require('./passport-config');
-// app.use(passport.initialize());
-// app.use(passport.session());
-// app.use(session({
-//   name: 'myname.sid',
-//   resave: false,
-//   saveUninitialized: false,
-//   secret: 'secret',
-//   cookie: {
-//     maxAge: 36000000,
-//     httpOnly: false,
-//     secure: false
-//   },
-//   store: new MongoStore({ mongooseConnection: mongoose.connection })
-// }));
+
 require('./passport-config');
 app.use(passport.initialize());
 app.use(passport.session());

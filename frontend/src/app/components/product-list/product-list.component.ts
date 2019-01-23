@@ -31,7 +31,7 @@ export class ProductListComponent implements OnInit {
     {value: "id",  viewValue: "Product ID"}
   ];
 
-  username: String;
+  // username: String;
   searchForm: FormGroup;
   products: Product[];
   displayedColumns = ['_id', 'name', 'description', 'numberInStock', 'cost', 'supplier'];
@@ -50,6 +50,8 @@ export class ProductListComponent implements OnInit {
    addName(data) {
      this.username = data.username;
    }
+
+  // adds the  logged in username to the top of the page.
 
   ngOnInit() {
     this.fetchProducts();
@@ -103,7 +105,7 @@ export class ProductListComponent implements OnInit {
         error => console.error(error)
       )
   }
-
+// allows user to log out
 
 
   
